@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Game Match Simulation</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- TOP NAVIGATION -->
+<header class="top-bar">
+
+    <!-- LEFT: MENU -->
+    <div class="menu">
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <div class="menu-dropdown" id="menuDropdown">
+            <a href="#">Home</a>
+            <a href="#">Game Match</a>
+            <a href="#">History</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+
+
+    <!-- CENTER -->
+    <div class="header-title">
+        <h1>🎮 GAME MATCH</h1>
+        <p>Online Game Match Simulation</p>
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="account-area">
+
+        <div class="wallet">
+            💰
+            <div>
+                <small>Balance</small>
+                <strong>₱0.00</strong>
+            </div>
+        </div>
+
+        <div class="profile">
+            <div class="profile-icon">
+                👤
+            </div>
+
+            <div>
+                <small>Profile</small>
+                <strong>User</strong>
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <!-- GAME VIDEO -->
+    <div class="video-box">
+
+        <video controls>
+            <source src="game-video.mp4" type="video/mp4">
+
+            Your browser does not support the video tag.
+        </video>
+
+    </div>
+
+
+    <!-- TEAMS -->
+    <div class="teams">
+
+        <!-- WALA -->
+        <div class="team wala">
+
+            <h2>WALA</h2>
+
+            <div class="amount">
+                <span class="yellow-peso">₱</span>
+                <span id="teamA">0</span>
+            </div>
+
+            <div class="payout">
+                Payout: ₱0.00
+            </div>
+
+            <div class="bet-info">
+                Bet: ₱0.00
+            </div>
+
+            <div class="pays-info">
+                Pays: ₱0.00
+            </div>
+
+            <button
+                class="bet wala-button"
+                id="betA"
+                onclick="selectTeam('WALA')">
+                BET WALA
+            </button>
+
+        </div>
+
+
+        <!-- MERON -->
+        <div class="team meron">
+
+            <h2>MERON</h2>
+
+            <div class="amount">
+                <span class="yellow-peso">₱</span>
+                <span id="teamB">0</span>
+            </div>
+
+            <div class="payout">
+                Payout: ₱0.00
+            </div>
+
+            <div class="bet-info">
+                Bet: ₱0.00
+            </div>
+
+            <div class="pays-info">
+                Pays: ₱0.00
+            </div>
+
+            <button
+                class="bet meron-button"
+                id="betB"
+                onclick="selectTeam('MERON')">
+                BET MERON
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SELECTED TEAM -->
+    <div class="selection" id="selection">
+        No team selected
+    </div>
+
+
+    <!-- PREDICTION AMOUNT -->
+    <div class="prediction-box">
+
+        <h3>Prediction Amount</h3>
+
+        <div class="amount-input">
+
+            <span class="input-peso">₱</span>
+
+            <input
+                type="number"
+                id="predictionAmount"
+                value="0.00"
+                min="0"
+                step="0.01">
+
+        </div>
+
+
+        <div class="chips">
+
+            <button onclick="setAmount(10)">₱10</button>
+
+            <button onclick="setAmount(50)">₱50</button>
+
+            <button onclick="setAmount(100)">₱100</button>
+
+            <button onclick="setAmount(500)">₱500</button>
+
+        </div>
+
+    </div>
+
+
+    <div class="result" id="result"></div>
+
+</div>
+
+
+<script src="script.js"></script>
+```
+
+</body>
+
+</html>
