@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Game Match Simulation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="top-bar">
+
+            <div class="brand">
+                <button class="menu-button" onclick="toggleMenu()">☰</button>
+                <span>GAME MATCH</span>
+            </div>
+
+            <div class="account-area">
+
+                <div class="balance">
+                    <span>▣</span>
+                    <strong>₱0.00</strong>
+                </div>
+
+                <div class="profile">
+                    👤
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MENU -->
+        <div class="menu-dropdown" id="menuDropdown">
+
+            <a href="index.html">🏠 Home</a>
+            <a href="index.html">🎮 Game Match</a>
+            <a href="#">📋 History</a>
+            <a href="#">ℹ️ About</a>
+
+        </div>
+
+    </header>
+
+
+    <!-- MATCH TITLE -->
+
+    <section class="match-heading">
+
+        <div>
+            <h1>GAME MATCH SIMULATION</h1>
+            <p>Online Game Match Simulation</p>
+        </div>
+
+        <div class="date" id="date"></div>
+
+    </section>
+
+
+    <main class="container">
+
+
+        <!-- VIDEO -->
+
+        <div class="video-box">
+
+            <video id="gameVideo" controls>
+
+                <source src="game-video.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+
+            </video>
+
+        </div>
+
+
+        <!-- MATCH INFO -->
+
+        <div class="match-info">
+
+            <strong>MATCH #153</strong>
+
+            <span class="open-status">
+                ● OPEN
+            </span>
+
+        </div>
+
+
+        <!-- TEAMS -->
+
+        <div class="teams">
+
+
+            <!-- MERON -->
+
+            <div class="team meron">
+
+                <div class="team-title">
+                    MERON
+                </div>
+
+                <div class="team-content">
+
+                    <div class="amount">
+                        ₱<span id="teamB">0</span>
+                    </div>
+
+                    <div class="payout">
+                        PAYOUT = 0.00
+                    </div>
+
+                    <div class="bet-info">
+                        AMOUNT: ₱<span id="betB">0.00</span>
+                    </div>
+
+                    <div class="pays">
+                        PAYS: ₱0.00
+                    </div>
+
+                </div>
+
+                <button
+                    class="select-button"
+                    onclick="selectTeam('MERON')">
+
+                    ＋ BET MERON
+
+                </button>
+
+            </div>
+
+
+            <!-- WALA -->
+
+            <div class="team wala">
+
+                <div class="team-title">
+                    WALA
+                </div>
+
+                <div class="team-content">
+
+                    <div class="amount">
+                        ₱<span id="teamA">0</span>
+                    </div>
+
+                    <div class="payout">
+                        PAYOUT = 0.00
+                    </div>
+
+                    <div class="bet-info">
+                        AMOUNT: ₱<span id="betA">0.00</span>
+                    </div>
+
+                    <div class="pays">
+                        PAYS: ₱0.00
+                    </div>
+
+                </div>
+
+                <button
+                    class="select-button"
+                    onclick="selectTeam('WALA')">
+
+                    ＋ BET WALA
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SELECTED -->
+
+        <div class="selection" id="selection">
+
+            No team selected
+
+        </div>
+
+
+        <!-- SIMULATION AMOUNT -->
+
+        <div class="prediction-box">
+
+            <div class="box-title">
+                Bet Amount
+            </div>
+
+            <div class="amount-input">
+
+                <span>₱</span>
+
+                <input
+                    type="number"
+                    id="predictionAmount"
+                    value="100"
+                    min="0"
+                    step="0.01">
+
+            </div>
+
+
+            <div class="chips">
+
+                <button onclick="setAmount(10)">₱10</button>
+
+                <button onclick="setAmount(50)">₱50</button>
+
+                <button onclick="setAmount(100)">₱100</button>
+
+                <button onclick="setAmount(500)">₱500</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div class="winner-box">
+
+            <div class="winner-title">
+                MATCH RESULT
+            </div>
+
+            <div
+                class="winner-text"
+                id="result">
+
+                Waiting for result...
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
